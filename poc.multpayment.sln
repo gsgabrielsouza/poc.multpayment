@@ -3,13 +3,19 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30804.86
 MinimumVisualStudioVersion = 15.0.26124.0
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "poc.multpayment.payment", "src\poc.multpayment.payment\poc.multpayment.payment.csproj", "{109818A1-0DEB-455E-A30B-BF366864372D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "poc.multpayment.payment", "src\poc.multpayment.payment\poc.multpayment.payment.csproj", "{109818A1-0DEB-455E-A30B-BF366864372D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "poc.multpayment.domain", "src\poc.multpayment.domain\poc.multpayment.domain.csproj", "{FC485C92-5D27-483C-8C8C-3489F5D111B2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "poc.multpayment.domain", "src\poc.multpayment.domain\poc.multpayment.domain.csproj", "{FC485C92-5D27-483C-8C8C-3489F5D111B2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "poc.multpayment.infra", "src\poc.multpayment.infra\poc.multpayment.infra.csproj", "{16CE9A61-3411-42D6-96BF-D20C7DDC3B7B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "poc.multpayment.infra", "src\poc.multpayment.infra\poc.multpayment.infra.csproj", "{16CE9A61-3411-42D6-96BF-D20C7DDC3B7B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "poc.multpayment.application", "src\poc.multpayment.application\poc.multpayment.application.csproj", "{64C958E0-2ECB-42FB-B914-A492C7E68DC3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "poc.multpayment.application", "src\poc.multpayment.application\poc.multpayment.application.csproj", "{64C958E0-2ECB-42FB-B914-A492C7E68DC3}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "providers", "providers", "{5A7F30C7-98D4-4D46-8CE1-57CF9BBC7272}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "poc.multpayment.pix", "src\poc.multpayment.pix\poc.multpayment.pix.csproj", "{9BF05065-A5FF-403E-AC16-BCD64B63D526}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "poc.multpayment.cielo", "src\poc.multpayment.cielo\poc.multpayment.cielo.csproj", "{6BC5DBA1-C6C8-4E22-ACD4-03A36D467865}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -69,9 +75,37 @@ Global
 		{64C958E0-2ECB-42FB-B914-A492C7E68DC3}.Release|x64.Build.0 = Release|Any CPU
 		{64C958E0-2ECB-42FB-B914-A492C7E68DC3}.Release|x86.ActiveCfg = Release|Any CPU
 		{64C958E0-2ECB-42FB-B914-A492C7E68DC3}.Release|x86.Build.0 = Release|Any CPU
+		{9BF05065-A5FF-403E-AC16-BCD64B63D526}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9BF05065-A5FF-403E-AC16-BCD64B63D526}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9BF05065-A5FF-403E-AC16-BCD64B63D526}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{9BF05065-A5FF-403E-AC16-BCD64B63D526}.Debug|x64.Build.0 = Debug|Any CPU
+		{9BF05065-A5FF-403E-AC16-BCD64B63D526}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{9BF05065-A5FF-403E-AC16-BCD64B63D526}.Debug|x86.Build.0 = Debug|Any CPU
+		{9BF05065-A5FF-403E-AC16-BCD64B63D526}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9BF05065-A5FF-403E-AC16-BCD64B63D526}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9BF05065-A5FF-403E-AC16-BCD64B63D526}.Release|x64.ActiveCfg = Release|Any CPU
+		{9BF05065-A5FF-403E-AC16-BCD64B63D526}.Release|x64.Build.0 = Release|Any CPU
+		{9BF05065-A5FF-403E-AC16-BCD64B63D526}.Release|x86.ActiveCfg = Release|Any CPU
+		{9BF05065-A5FF-403E-AC16-BCD64B63D526}.Release|x86.Build.0 = Release|Any CPU
+		{6BC5DBA1-C6C8-4E22-ACD4-03A36D467865}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6BC5DBA1-C6C8-4E22-ACD4-03A36D467865}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6BC5DBA1-C6C8-4E22-ACD4-03A36D467865}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{6BC5DBA1-C6C8-4E22-ACD4-03A36D467865}.Debug|x64.Build.0 = Debug|Any CPU
+		{6BC5DBA1-C6C8-4E22-ACD4-03A36D467865}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{6BC5DBA1-C6C8-4E22-ACD4-03A36D467865}.Debug|x86.Build.0 = Debug|Any CPU
+		{6BC5DBA1-C6C8-4E22-ACD4-03A36D467865}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6BC5DBA1-C6C8-4E22-ACD4-03A36D467865}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6BC5DBA1-C6C8-4E22-ACD4-03A36D467865}.Release|x64.ActiveCfg = Release|Any CPU
+		{6BC5DBA1-C6C8-4E22-ACD4-03A36D467865}.Release|x64.Build.0 = Release|Any CPU
+		{6BC5DBA1-C6C8-4E22-ACD4-03A36D467865}.Release|x86.ActiveCfg = Release|Any CPU
+		{6BC5DBA1-C6C8-4E22-ACD4-03A36D467865}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{9BF05065-A5FF-403E-AC16-BCD64B63D526} = {5A7F30C7-98D4-4D46-8CE1-57CF9BBC7272}
+		{6BC5DBA1-C6C8-4E22-ACD4-03A36D467865} = {5A7F30C7-98D4-4D46-8CE1-57CF9BBC7272}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {39856D45-79C6-4AB3-92B5-2DA7169DEA23}
