@@ -10,7 +10,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\poc.multpayment.cielo\poc.multpayment.cielo.csproj" />
     <ProjectReference Include="..\poc.multpayment.domain\poc.multpayment.domain.csproj" />
+    <ProjectReference Include="..\poc.multpayment.pix\poc.multpayment.pix.csproj" />
   </ItemGroup>
 
 </Project>

@@ -4,7 +4,7 @@ using System.Text;
 
 namespace poc.multpayment.cielo.Command
 {
-    public class CieloPaymentAuthorizeCommand
-    {
+    public class CieloPaymentAuthorizeCommand 
+    { 
     }
 }

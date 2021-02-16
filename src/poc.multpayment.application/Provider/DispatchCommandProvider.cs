@@ -17,7 +17,9 @@ namespace poc.multpayment.application.Provider
             var handler = typeof(ICommandHandler<,>);
             var handlerType = handler.MakeGenericType(command.GetType(), typeof(TResult));
 
-            var concretesType = Assembly.GetExecutingAssembly().GetTypes().First(x => x.IsClass && x.GetInterfaces().Contains(handlerType));
+            var concretesType = Assembly.GetExecutingAssembly().GetTypes()
+                .First(x => x.IsClass && 
+                            x.GetInterfaces().Contains(handlerType));
 
             if (concretesType == null) throw new Exception($"not found command implementation");
 
