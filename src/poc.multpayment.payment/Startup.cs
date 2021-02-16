@@ -1,3 +1,5 @@
+using MediatR;
+using MediatR.Pipeline;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -6,6 +8,9 @@ using Microsoft.AspNetCore.Mvc.ApiExplorer;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Options;
+using poc.multpayment.application.Interfaces.v1;
+using poc.multpayment.application.Provider;
+using poc.multpayment.application.Services.v1;
 using Swashbuckle.AspNetCore.SwaggerGen;
 using Swashbuckle.AspNetCore.SwaggerUI;
 using System;
@@ -24,6 +29,8 @@ namespace poc.multpayment.payment
             services.AddMvc(options => options.EnableEndpointRouting = false)
                 .SetCompatibilityVersion(CompatibilityVersion.Version_3_0);
 
+            services.AddMediatR(typeof(Startup));
+
             services.AddApiVersioning(p =>
             {
                 p.DefaultApiVersion = new ApiVersion(1, 0);
@@ -38,6 +45,12 @@ namespace poc.multpayment.payment
             });
 
             //services.AddTransient<IConfigureOptions<SwaggerGenOptions>, ConfigureSwaggerOptions>();
+            //services.AddScoped(typeof(IPipelineBehavior<,>), typeof(GenericPipelineBehavior<,>));
+            //services.AddScoped(typeof(IRequestPreProcessor<>), typeof(GenericRequestPreProcessor<>));
+            //services.AddScoped(typeof(IRequestPostProcessor<,>), typeof(GenericRequestPostProcessor<,>));
+            services.AddScoped<IPaymentAppService, PaymentAppService>();
+
+            services.AddScoped<DispatchCommandProvider>();
 
             services.AddSwaggerGen();
         }
