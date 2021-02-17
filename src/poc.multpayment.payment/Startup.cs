@@ -10,6 +10,8 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Options;
 using poc.multpayment.application.Interfaces.v1;
 using poc.multpayment.application.Provider;
+using poc.multpayment.application.Provider.Interface;
+using poc.multpayment.application.Provider.Map;
 using poc.multpayment.application.Services.v1;
 using Swashbuckle.AspNetCore.SwaggerGen;
 using Swashbuckle.AspNetCore.SwaggerUI;
@@ -51,6 +53,9 @@ namespace poc.multpayment.payment
             services.AddScoped<IPaymentAppService, PaymentAppService>();
 
             services.AddScoped<DispatchCommandProvider>();
+
+            services.AddScoped<IMapProviderCommand, CieloCommand>();
+            services.AddScoped<IMapProviderCommand, PixCommand>();
 
             services.AddSwaggerGen();
         }

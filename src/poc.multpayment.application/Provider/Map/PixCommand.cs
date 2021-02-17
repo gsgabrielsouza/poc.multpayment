@@ -1,13 +1,17 @@
-﻿using poc.multpayment.application.Services.v1.Command.PaymentCommand;
+﻿using poc.multpayment.application.Provider.Interface;
+using poc.multpayment.application.Services.v1.Command.PaymentCommand;
 using poc.multpayment.domain.Command;
 using poc.multpayment.pix.Command;
 using System.Collections.Generic;
 
 namespace poc.multpayment.application.Provider.Map
 {
-    internal class PixCommand
+    public class PixCommand : IMapProviderCommand
     {
-        internal List<CommandsMap> commands = new List<CommandsMap>();
+        List<CommandsMap> commands = new List<CommandsMap>();
+
+        public List<CommandsMap> Commands => commands;
+
 
         public PixCommand()
         {
