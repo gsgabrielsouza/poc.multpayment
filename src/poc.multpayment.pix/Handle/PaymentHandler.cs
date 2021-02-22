@@ -1,8 +1,6 @@
 ﻿using MediatR;
 using poc.multpayment.provider.pix.Command;
 using System;
-using System.Collections.Generic;
-using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -16,7 +14,7 @@ namespace poc.multpayment.provider.pix.Handle
 
         public Task<Unit> Handle(PixPaymentAuthorizeCommand request, CancellationToken cancellationToken)
         {
-            Console.WriteLine("Pagamento na Cielo");
+            Console.WriteLine("Pagamento na pix");
             return Unit.Task;
         }
     }
