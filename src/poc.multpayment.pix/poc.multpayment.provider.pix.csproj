@@ -2,17 +2,16 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
+    <AssemblyName>poc.multpayment.provider.pix</AssemblyName>
+    <RootNamespace>poc.multpayment.provider.pix</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="MediatR" Version="9.0.0" />
-    <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="9.0.0" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\poc.multpayment.cielo\poc.multpayment.provider.cielo.csproj" />
     <ProjectReference Include="..\poc.multpayment.domain\poc.multpayment.domain.csproj" />
-    <ProjectReference Include="..\poc.multpayment.pix\poc.multpayment.provider.pix.csproj" />
   </ItemGroup>
 
 </Project>

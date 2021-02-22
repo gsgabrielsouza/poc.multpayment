@@ -1,4 +1,5 @@
-﻿using poc.multpayment.application.Provider.Interface;
+﻿using MediatR;
+using poc.multpayment.application.Provider.Interface;
 using poc.multpayment.application.Provider.Map;
 using poc.multpayment.domain.Command;
 using poc.multpayment.domain.Handler;
@@ -12,31 +13,33 @@ namespace poc.multpayment.application.Provider
 {
     public class DispatchCommandProvider : IDispatchCommand
     {
+        private readonly IMediator mediator;
         List<CommandsMap> commands = new List<CommandsMap>();
 
-        public DispatchCommandProvider(IEnumerable<IMapProviderCommand> commands)
+        public DispatchCommandProvider(
+            IEnumerable<IMapProviderCommand> commands,
+            IMediator mediator)
         {
             foreach (var item in commands)
                 this.commands.AddRange(item.Commands);
+            this.mediator = mediator;
         }
 
-        public Task<TResult> Execute<TCommand, TResult>(TCommand command)
+        public async Task<TResult> Execute<TCommand, TResult>(TCommand command)
             where TCommand : BaseCommand
             where TResult : class
         {
             var handler = typeof(ICommandHandler<,>);
-            var handlerType = handler.MakeGenericType(command.GetType(), typeof(TResult));
+            var commandType = commands.FirstOrDefault(x => x.CommandType == command.GetType() && x.ProviderType == command.Provider);
 
-            //var concretesType = Assembly.GetExecutingAssembly().GetTypes()
-            //    .First(x => x.IsClass && 
-            //                x.GetInterfaces().Contains(handlerType));
-            var providerHandler = commands.FirstOrDefault(x => x.CommandType == command.GetType() && x.ProviderType == command.Provider);
+            if (commandType == null)
+                throw new Exception($"Commando {command.GetType().Name} não mapeado para provider {command.Provider}");
 
+            var handlerType = handler.MakeGenericType(commandType.ProviderCommandType, typeof(TResult));
+            var assemblyProviders = Assembly.GetCallingAssembly().GetReferencedAssemblies().Where(x => x.Name.ToLower().Contains("provider")).Select(e => Assembly.Load(e)).SelectMany(x => x.GetTypes());
 
-            if (providerHandler == null) throw new Exception($"not found command implementation");
-
-            var concreteHandler = Activator.CreateInstance(providerHandler.ProviderCommandType) as ICommandHandler<TCommand, TResult>;
-            return concreteHandler?.Handle(command);
+            var result =  await mediator.Send(Activator.CreateInstance(commandType.ProviderCommandType, new object[] { command }));
+            return result as TResult;
         }
     }
 }

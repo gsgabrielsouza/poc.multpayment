@@ -1,8 +1,7 @@
 ﻿using poc.multpayment.application.Provider.Interface;
-using poc.multpayment.application.Services.v1.Command.PaymentCommand;
-using poc.multpayment.cielo.Command;
 using poc.multpayment.domain.Command;
-using System;
+using poc.multpayment.domain.Command.PaymentCommand;
+using poc.multpayment.provider.cielo.Command;
 using System.Collections.Generic;
 
 namespace poc.multpayment.application.Provider.Map

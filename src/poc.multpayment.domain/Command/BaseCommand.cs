@@ -2,6 +2,10 @@
 {
     public class BaseCommand
     {
+        public BaseCommand()
+        {
+
+        }
         public BaseCommand(ProviderEnum providerEnum)
         {
             Provider = providerEnum;

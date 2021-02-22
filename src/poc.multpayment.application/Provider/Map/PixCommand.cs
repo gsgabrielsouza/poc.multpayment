@@ -1,7 +1,7 @@
 ﻿using poc.multpayment.application.Provider.Interface;
-using poc.multpayment.application.Services.v1.Command.PaymentCommand;
 using poc.multpayment.domain.Command;
-using poc.multpayment.pix.Command;
+using poc.multpayment.domain.Command.PaymentCommand;
+using poc.multpayment.provider.pix.Command;
 using System.Collections.Generic;
 
 namespace poc.multpayment.application.Provider.Map
@@ -18,7 +18,7 @@ namespace poc.multpayment.application.Provider.Map
             commands.Add(new CommandsMap(
                 typeof(PaymentAuthorizeCommand),
                 typeof(PixPaymentAuthorizeCommand),
-                ProviderEnum.Cielo));
+                ProviderEnum.Pix));
         }
     }
 }

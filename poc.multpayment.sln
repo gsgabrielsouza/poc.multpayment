@@ -13,9 +13,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "poc.multpayment.application
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "providers", "providers", "{5A7F30C7-98D4-4D46-8CE1-57CF9BBC7272}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "poc.multpayment.pix", "src\poc.multpayment.pix\poc.multpayment.pix.csproj", "{9BF05065-A5FF-403E-AC16-BCD64B63D526}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "poc.multpayment.provider.pix", "src\poc.multpayment.pix\poc.multpayment.provider.pix.csproj", "{9BF05065-A5FF-403E-AC16-BCD64B63D526}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "poc.multpayment.cielo", "src\poc.multpayment.cielo\poc.multpayment.cielo.csproj", "{6BC5DBA1-C6C8-4E22-ACD4-03A36D467865}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "poc.multpayment.provider.cielo", "src\poc.multpayment.cielo\poc.multpayment.provider.cielo.csproj", "{6BC5DBA1-C6C8-4E22-ACD4-03A36D467865}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

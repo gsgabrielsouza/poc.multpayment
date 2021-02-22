@@ -32,6 +32,8 @@ namespace poc.multpayment.payment
                 .SetCompatibilityVersion(CompatibilityVersion.Version_3_0);
 
             services.AddMediatR(typeof(Startup));
+            services.AddMediatR(typeof(provider.cielo.Handle.PaymentHandle));
+            services.AddMediatR(typeof(provider.pix.Command.PixPaymentAuthorizeCommand));
 
             services.AddApiVersioning(p =>
             {

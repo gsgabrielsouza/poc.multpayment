@@ -1,7 +1,7 @@
 ﻿using poc.multpayment.domain.Command;
 using System;
 
-namespace poc.multpayment.application.Services.v1.Command.PaymentCommand
+namespace poc.multpayment.domain.Command.PaymentCommand
 {
     public class PaymentAuthorizeCommand : BaseCommand
     {
@@ -14,5 +14,6 @@ namespace poc.multpayment.application.Services.v1.Command.PaymentCommand
         public decimal Amount { get; set; }
         public int OrderId { get; set; }
         public Guid CustomerId { get; set; }
+
     }
 }

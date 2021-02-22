@@ -1,0 +1,17 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <AssemblyName>poc.multpayment.provider.cielo</AssemblyName>
+    <RootNamespace>poc.multpayment.provider.cielo</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MediatR" Version="9.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\poc.multpayment.domain\poc.multpayment.domain.csproj" />
+  </ItemGroup>
+
+</Project>
